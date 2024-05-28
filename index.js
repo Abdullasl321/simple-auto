@@ -21,13 +21,21 @@ botBaileys.on("qr", (qr) => {
 });
 botBaileys.on("ready", async () => console.log("READY BOT"));
 
-let awaitingResponse = false;
+const userLastMessageTime = {};
 
 botBaileys.on("message", async (message) => {
-    botBaileys.sendText(
-        message.from,
-        "*Hello There!* \n Thank you for contacting me!, I will reply to you as soon as possible. 🙂\n\n> `Auto Reply`",
-    );
+    const user = message.from;
+    const currentTime = new Date().getTime();
+    const sixHours = 6 * 60 * 60 * 1000;
+
+    if (!userLastMessageTime[user] || (currentTime - userLastMessageTime[user] > sixHours)) {
+        userLastMessageTime[user] = currentTime;
+
+        botBaileys.sendText(
+            user,
+            "*Hello There!* \n\nThank you for contacting me. I will reply to you as soon as possible. 🙂\n\n> `~ ARAbdullaDev`\n> Full Stack Developer | NodeJS Developer | Website Developer | ChatBot Builder | Website Manager | Student",
+        );
+    }
 });
 
 // Serve static files from the 'public' directory
