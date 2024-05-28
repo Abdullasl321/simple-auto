@@ -22,6 +22,7 @@ botBaileys.on("qr", (qr) => {
 botBaileys.on("ready", async () => console.log("READY BOT"));
 
 const userLastMessageTime = {};
+const mono = "```";
 
 botBaileys.on("message", async (message) => {
     const user = message.from;
@@ -31,10 +32,7 @@ botBaileys.on("message", async (message) => {
     if (!userLastMessageTime[user] || (currentTime - userLastMessageTime[user] > sixHours)) {
         userLastMessageTime[user] = currentTime;
 
-        botBaileys.sendText(
-            user,
-            "*Hello There!* \n\nThank you for contacting me. I will reply to you as soon as possible. 🙂\n\n> `~ ARAbdullaDev`\n> Full Stack Developer | NodeJS Developer | Website Developer | ChatBot Builder | Website Manager | Student",
-        );
+        botBaileys.sendMedia(user, 'https://i.ibb.co/93hPLzL/Screenshot-2024-05-28-161828.png', `*Hello There!* 👋\nThank u for contacting me. I will reply to your message as soon as possible. 🙂\n\n\n _*<> I AM INTERESTED IN DEVELOPING </>*_ ♨️\n\n> ${mono}$user\desktop> % show about${mono}\n> *~|-~* 🐙 *GitHub :-* github.com/ARAbdullaDev\n> *~|-~* ▶️ *Replit :-* replit.com/@ARAbdullaDev\n> *~|-~* 📺 *YouTube :-* youtube.com/@ARAbdullaDev\n> *~|-~* ↗️ *Website :-* arabdullah.000webhostapp.com`);
     }
 });
 
