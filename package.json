@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
     "@bot-wa/bot-wa-baileys": "^1.1.3",
     "accepts": "^1.3.8",
     "agent-base": "^5.1.1",
