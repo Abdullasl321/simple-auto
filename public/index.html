@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Refresh Example</title>
+</head>
+<body>
+    <h1>QR Code Refresh Example</h1>
+    <img id="qrCode" src="/public/qr.png" alt="QR Code">
+    <script>
+        function refreshQR() {
+            // Get reference to the QR code image
+            var qrImage = document.getElementById("qrCode");
+            // Generate a random query string to force browser to reload the image
+            var randomQuery = '?' + new Date().getTime();
+            // Update the image source with the new query string
+            qrImage.src = "/public/qr.png" + randomQuery;
+        }
+
+        // Refresh the QR code image every 1 second
+        setInterval(refreshQR, 1000);
+    </script>
+</body>
+</html>
