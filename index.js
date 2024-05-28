@@ -24,9 +24,9 @@ botBaileys.on("ready", async () => console.log("READY BOT"));
 let awaitingResponse = false;
 
 botBaileys.on("message", async (message) => {
-    botBaileys.sendMessage(
+    botBaileys.sendText(
         message.from,
-        "*Hello There!* \n Thank you for contacting me!, I will reply to you as soon as possible. 🙂",
+        "*Hello There!* \n Thank you for contacting me!, I will reply to you as soon as possible. 🙂\n\n> `Auto Reply`",
     );
 });
 
