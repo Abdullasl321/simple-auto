@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Refresh Example</title>
+    <title>QR Code</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.qr-container {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+.qr-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+</style>
 </head>
 <body>
     <h1>QR Code Refresh Example</h1>
-    <img id="qrCode" src="/public/qr.png" alt="QR Code">
+    <img id="qrCode" src="qr.png" alt="QR Code">
     <script>
         function refreshQR() {
             // Get reference to the QR code image
